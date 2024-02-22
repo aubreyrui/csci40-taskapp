@@ -3,9 +3,13 @@
         <title>Task List</title>
     </head>
     <body>
+        <h1>Hello World</h1>
         <ul>
             {% for task in tasks %}
-                <li>{{task}}</li>
+                <li> <a href = "{{task.get_absolute_url}}"> 
+                    {{task}}
+                </a>
+                    </li>
             {% endfor %}
         </ul>
     </body>
