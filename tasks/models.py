@@ -5,6 +5,9 @@ from django.urls import reverse
 class TaskGroup(models.Model):
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return '{}'.format(self.name)
+
 class Task(models.Model):
     name = models.CharField(max_length=100)
     due_date = models.DateTimeField(null=False)
