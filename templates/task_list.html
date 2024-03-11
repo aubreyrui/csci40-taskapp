@@ -16,8 +16,8 @@
     {% endif %}
         <ul>
             {% for task in object_list %}
-                <li> <a href = "{{task.get_absolute_url}}"> 
-                    {{task}}
+                <li> <a href = "{{ task.get_absolute_url }}"> 
+                    {{task.name}}
                 </a>
                     </li>
             {% endfor %}

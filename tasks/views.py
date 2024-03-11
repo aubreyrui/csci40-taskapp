@@ -26,9 +26,9 @@ def task_detail(request, pk):
 
 class TaskListView(ListView):
     model = Task
-    tempalte_name = 'task_list.html'
+    template_name = 'task_list.html'
 
 class TaskDetailView(LoginRequiredMixin, DetailView):
     model = Task
-    tempalte_name = 'task_detail.html'
+    template_name = 'task_detail.html'
 
