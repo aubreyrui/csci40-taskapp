@@ -22,7 +22,7 @@ def task_detail(request, pk):
     task = Task.objects.get(pk=pk)
     ctx = { 'task': task }
 
-    return render(request, 'task_detail.html'. ctx)
+    return render(request, 'task_detail.html', ctx)
 
 class TaskListView(ListView):
     model = Task
