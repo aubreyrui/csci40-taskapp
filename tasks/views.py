@@ -56,7 +56,7 @@ class TaskListView(ListView):
         if form.is_valid():
             task = Task()
             task.name = form.cleaned_data.get('name')
-            task.due_date = form.cleaned_data.get('due_due')
+            task.due_date = form.cleaned_data.get('due_date')
             task.taskgroup = form.cleaned_data.get('taskgroup')
             task.save()
         
