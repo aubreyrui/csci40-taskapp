@@ -7,6 +7,9 @@
         <title>Task List</title>
     </head>
     <body>
+        {% if object.task_image %}
+        <img src="{{ object.task_image.url }}" alt="">
+        {% endif %}
         <h2><li>{{ object }}</li></h2>
         <form method="POST">
             {% csrf_token %}

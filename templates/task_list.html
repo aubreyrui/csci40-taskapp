@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="keywords" content="foo,bar" />
-        <meta name="description" content="foo"/>
-        <title>Task List</title>
-    </head>
-    <body>
-        {% if request.user.is_authenticated %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}{% endblock %}
+{% block styles %}{% endblock %}
+{% block main %}
+
+{% if object.task_image %}
+        <img src="{{ object.task_image.url }}" alt="">
+        {% endif %}
+    {% if request.user.is_authenticated %}
         <h1>Hello {{ request.user.username }}</h1>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
@@ -48,5 +49,4 @@
             {{ form.as_div }}
             <button type="submit">SUBMIT</button>
         </form>
-    </body>
-</html>
+{% endblock %}
